@@ -1,20 +1,47 @@
+import { useState, useEffect } from "react";
+import React from "react";
+
 export default function About() {
-    return (
-        <div>
-            <h1 className="text-5xl">Conor Hamilton</h1>
-            <h2 className="text-2xl pb-4">Full-Stack Engineer</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat natus quisquam, corporis quae ducimus alias voluptatibus obcaecati nulla officia minima ab labore molestias iusto saepe debitis eum, iure beatae!
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus atque consectetur sed illum culpa alias? Dolorem praesentium minus est at. Placeat officia culpa labore dolorem quod eos nam nemo corrupti.
-            </p>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam suscipit modi possimus quas quam minus harum laborum ab vel quisquam debitis obcaecati placeat reprehenderit et, ut fuga ipsum! Ad, modi.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nisi quod blanditiis, deleniti, dolores quidem voluptates facilis, ea libero consequuntur dolore tempora aspernatur debitis quae ipsum cum expedita hic deserunt.
-            </p>
-        </div>
-    );
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 800); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <section
+      id="aboutme"
+      className={`container mx-auto mb-28 px-4 md:px-8 ${
+        isVisible ? "fade-in-up" : "hidden-content"
+      }`}
+    >
+      <div className="p-4 md:p-8">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">Conor Hamilton</h1>
+        <h2 className="text-xl md:text-2xl mb-4">Full-Stack Engineer</h2>
+        <p className="text-base md:text-lg leading-relaxed">
+          Computers have been my jam since I was knee-high to a keyboard. It all
+          started with gaming - name any game. I was hooked. And then, like any
+          curious kid, I started poking around, learning a bit of C++ with
+          friends, and even dipping my toes into the world of private servers
+          for said games. Good times...
+        </p>
+        <p className="text-base md:text-lg mt-4 leading-relaxed">
+          Fast forward a bit, and here I am, a software engineer in the making.
+          After years of being the go-to IT guy in the office, I decided to take
+          the plunge and enroll in a software engineering bootcamp with General
+          Assembly. With a young family to think about, it was time to turn my
+          passion into a career.
+        </p>
+        <p className="text-base md:text-lg mt-4 leading-relaxed">
+          When I'm not working on my projects, you can find me spending time
+          with my family, playing video games, or watching Arsenal bottle the
+          league (again).
+        </p>
+      </div>
+    </section>
+  );
 }
