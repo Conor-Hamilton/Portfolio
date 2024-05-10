@@ -9,7 +9,7 @@ export default function MySkills() {
     const calculateThreshold = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth < 768) {
-        return 0.25; 
+        return 0.25;
       } else {
         return 0.5;
       }
@@ -42,15 +42,21 @@ export default function MySkills() {
     },
     {
       category: "Frontend",
-      skills: ["React", "HTML", "CSS", "Tailwind CSS", "Bulma"],
+      skills: ["React", "Tailwind CSS", "Bulma", "HTML", "CSS"],
     },
     { category: "Backend", skills: ["Node.js", "Express", "Flask"] },
     {
       category: "Databases",
-      skills: ["MongoDB", "PostgreSQL", "Mongoose", "Mongo Atlas"],
+      skills: [
+        "MongoDB",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Mongoose",
+        "Mongo Atlas",
+      ],
     },
     { category: "Deployment", skills: ["Netlify", "Heroku", "Vercel"] },
-    { category: "Tools", skills: ["Git", "GitHub"] },
+    { category: "Tools", skills: ["Git", "GitHub", "Insomnia", "TablePlus"] },
   ];
 
   return (

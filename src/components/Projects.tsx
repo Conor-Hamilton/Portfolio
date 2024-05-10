@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, RefObject } from "react";
 import { IProject } from "../interfaces/Projects";
 
-
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef: RefObject<HTMLElement> = useRef(null);
@@ -42,7 +41,7 @@ export default function Projects() {
     {
       title: "11th-Planet-JiuJitsu",
       description: "MMA Gym platform to book and attend classes.",
-      technologies: ["React Native", "Firebase"],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Python", "Flask", "PostgreSQL", "SQLAlchemy"],
       imageUrl: "https://i.imgur.com/JM3GNui.png",
       liveUrl: "https://11th-planet-jiujitsu.netlify.app/",
       githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-4-frontend",
@@ -50,13 +49,22 @@ export default function Projects() {
   ];
 
   useEffect(() => {
+    const calculateThreshold = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 768) {
+        return 0.25;
+      } else {
+        return 0.6;
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: calculateThreshold() }
     );
 
     if (sectionRef.current) {
