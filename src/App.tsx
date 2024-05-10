@@ -12,14 +12,14 @@ export default function App() {
         <aside className="w-64 min-w-[250px] sticky top-0 lg:block hidden">
           <Navbar />
         </aside>
-        <div className="flex-1 px-4 sm:px-6 md:px-1 lg:px-2">
+        <div className="flex-1 px-4 sm:px-6 md:px-2 lg:px-2">
           <section id="aboutme" className="mb-60">
             <About />
           </section>
-          <section id="myskills" className="mb-60 mt-60">
+          <section id="myskills" className="mb-96">
             <MySkills />
           </section>
-          <section id="projects" className="mb-60 mt-60">
+          <section id="projects" className="mb-60 mt-12">
             <Projects />
           </section>
         </div>

@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, RefObject } from "react";
+import { IMySkill } from "../interfaces/Skills";
 
 export default function MySkills() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const sectionRef: RefObject<HTMLElement> = useRef(null);
 
   useEffect(() => {
     const calculateThreshold = () => {
@@ -34,7 +35,7 @@ export default function MySkills() {
     };
   }, []);
 
-  const techSkills = [
+  const techSkills: IMySkill[] = [
     {
       category: "Programming Languages",
       skills: ["JavaScript", "TypeScript", "Python"],
@@ -55,12 +56,14 @@ export default function MySkills() {
   return (
     <section
       ref={sectionRef}
-      className={`h-full bg-[#0a192f] px-2 ${
+      className={`h-full max-w-[850px] mx-auto bg-[#0a192f] px-2 ${
         isVisible ? "fade-in" : "hidden-content"
       }`}
     >
       <div className="container px-4 sm:px-6 md:px-8 py-8 mx-auto">
-        <h2 className="text-xl md:text-2xl text-center pb-4">My Skills</h2>
+        <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
+          My Skills
+        </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3">
           {techSkills.map((category, index) => (
             <div
