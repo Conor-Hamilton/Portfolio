@@ -64,7 +64,7 @@ export default function About() {
         </p>
         <p className="text-base md:text-lg mt-4 leading-relaxed">
           When I'm not working on my projects, you can find me spending time
-          with my family, playing video games, or watching Arsenal bottle the
+          with my family, playing video games, watching UFC or watching Arsenal bottle the
           league (again).
         </p>
       </div>
