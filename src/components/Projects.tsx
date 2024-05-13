@@ -7,20 +7,20 @@ export default function Projects() {
 
   const projects: IProject[] = [
     {
-      title: "Tetris Reloaded",
-      description: "Matrix themed Tetris game.",
-      technologies: ["HTML", "CSS", "JavaScript", "Git"],
-      imageUrl: "https://i.imgur.com/PSprql6.png",
-      liveUrl: "https://conor-hamilton.github.io/SEB-Project-1/",
-      githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-1",
-    },
-    {
-      title: "Game of Thrones Character App",
-      description: "Public API GoT Character App.",
-      technologies: ["React", "TypeScript", "Bulma", "Git"],
-      imageUrl: "https://i.imgur.com/81oGoUY.png",
-      liveUrl: "https://majestic-pegasus-01f742.netlify.app/",
-      githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-2",
+      title: "11th-Planet-JiuJitsu",
+      description: "MMA Gym platform to book and attend classes.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Python",
+        "Flask",
+        "PostgreSQL",
+        "SQLAlchemy",
+      ],
+      imageUrl: "https://i.imgur.com/JM3GNui.png",
+      liveUrl: "https://11th-planet-jiujitsu.netlify.app/",
+      githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-4-frontend",
     },
     {
       title: "Bootcamp Buddy",
@@ -39,12 +39,20 @@ export default function Projects() {
       githubUrl: "https://github.com/Conor-Hamilton/project-3-frontend",
     },
     {
-      title: "11th-Planet-JiuJitsu",
-      description: "MMA Gym platform to book and attend classes.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Python", "Flask", "PostgreSQL", "SQLAlchemy"],
-      imageUrl: "https://i.imgur.com/JM3GNui.png",
-      liveUrl: "https://11th-planet-jiujitsu.netlify.app/",
-      githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-4-frontend",
+      title: "Game of Thrones Character App",
+      description: "Public API GoT Character App.",
+      technologies: ["React", "TypeScript", "Bulma", "Git"],
+      imageUrl: "https://i.imgur.com/81oGoUY.png",
+      liveUrl: "https://majestic-pegasus-01f742.netlify.app/",
+      githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-2",
+    },
+    {
+      title: "Tetris Reloaded",
+      description: "Matrix themed Tetris game.",
+      technologies: ["HTML", "CSS", "JavaScript", "Git"],
+      imageUrl: "https://i.imgur.com/PSprql6.png",
+      liveUrl: "https://conor-hamilton.github.io/SEB-Project-1/",
+      githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-1",
     },
   ];
 
