@@ -34,7 +34,7 @@ export default function About() {
           >
             <FontAwesomeIcon
               icon={faGithub}
-              className="text-xl text-white hover:text-gray-300"
+              className="text-3xl text-white hover:text-gray-300"
             />
           </a>
           <a
@@ -44,7 +44,7 @@ export default function About() {
           >
             <FontAwesomeIcon
               icon={faLinkedin}
-              className="text-xl text-white hover:text-gray-300"
+              className="text-3xl text-white hover:text-gray-300"
             />
           </a>
         </div>

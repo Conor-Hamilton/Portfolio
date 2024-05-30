@@ -59,18 +59,17 @@ export default function Projects() {
   useEffect(() => {
     const calculateThreshold = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth < 768) {
-        return 0.25;
-      } else {
-        return 0.6;
-      }
+      return screenWidth < 768 ? 0.25 : 0.6;
     };
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
       },
       { threshold: calculateThreshold() }
     );
@@ -90,7 +89,7 @@ export default function Projects() {
     <section
       ref={sectionRef}
       className={`max-w-4xl mx-auto my-20 px-4 md:px-24 ${
-        isVisible ? "fade-in" : "hidden-content"
+        isVisible ? "visible fade-in" : "hidden-content"
       }`}
     >
       <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
@@ -103,7 +102,9 @@ export default function Projects() {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#0a192f] border border-transparent hover:border-white/30 rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl fade-in"
+            className={`bg-[#0a192f] border border-transparent hover:border-white/30 rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl ${
+              isVisible ? "fade-in" : "hidden-content"
+            }`}
             style={{
               animationDelay: `${index * 400}ms`,
               animationFillMode: "both",
