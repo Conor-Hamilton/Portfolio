@@ -93,7 +93,7 @@ export default function Projects() {
       }`}
     >
       <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
-        Projects
+        My Projects
       </h2>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         {projects.map((project, index) => (
@@ -137,7 +137,7 @@ export default function Projects() {
                 className="text-white hover:underline"
                 onClick={(e) => e.stopPropagation()}
               >
-                GitHub Repo
+                GitHub Repository
               </a>
             </div>
           </a>

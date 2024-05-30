@@ -51,21 +51,26 @@ export default function About() {
         <p className="text-base md:text-lg leading-relaxed">
           Computers have been my jam since I was knee-high to a keyboard. It all
           started with gaming - name any game. I was hooked. And then, like any
-          curious kid, I started poking around, learning a bit of C++ with
-          friends, and even dipping my toes into the world of private servers
-          for said games. Good times...
+          curious kid, I started poking around, learning a bit of{" "}
+          <span className="text-[#ff64da]">C++</span> with friends, and even
+          dipping my toes into the world of private servers for said games. Good
+          times...
         </p>
         <p className="text-base md:text-lg mt-4 leading-relaxed">
-          Fast forward a bit, and here I am, a software engineer in the making.
-          After years of being the go-to IT guy in the office, I decided to take
-          the plunge and enroll in a software engineering bootcamp with General
-          Assembly. With a young family to think about, it was time to turn my
-          passion into a career.
+          Fast forward a bit, and here I am, a{" "}
+          <span className="text-[#ff64da]">full-stack software engineer</span>{" "}
+          in the making. After years of being the go-to IT guy in the office, I
+          decided to take the plunge and enroll in a{" "}
+          <span className="text-[#ff64da]">
+            software engineering bootcamp with General Assembly
+          </span>
+          . With a young family to think about, it was time to turn my passion
+          into a career.
         </p>
         <p className="text-base md:text-lg mt-4 leading-relaxed">
           When I'm not working on my projects, you can find me spending time
-          with my family, playing video games, watching UFC or watching Arsenal bottle the
-          league (again).
+          with my family, playing video games, watching UFC or watching Arsenal
+          bottle the league (again).
         </p>
       </div>
     </section>
