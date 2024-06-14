@@ -60,12 +60,12 @@ export default function MySkills() {
   ];
 
   const learningCurrently = [
-    "Next.js",
+    "React Native",
     "AWS",
   ];
 
   const learningNext = [
-    "React Native",
+    "Next.js",
     "Angular",
   ];
 
