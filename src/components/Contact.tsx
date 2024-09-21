@@ -10,7 +10,7 @@ export default function Contact() {
         "service_ug2hunl",
         "template_bdgqx5r",
         e.currentTarget,
-        "gFejuYiGu07KRXjtt" 
+        "gFejuYiGu07KRXjtt"
       )
       .then(
         (result) => {
@@ -22,63 +22,57 @@ export default function Contact() {
         }
       );
 
-
     e.currentTarget.reset();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="flex justify-center">
-        <label htmlFor="from_name">
+    <section className="max-w-4xl mx-auto mb-28 px-4 md:px-24">
+      <h2 className="text-2xl mb-6 text-center text-white opacity-90">
+        Contact Me
+      </h2>
+      <form
+        onSubmit={handleSubmit}
+        className="bg-[#112240] shadow-lg p-6 rounded-lg max-w-lg mx-auto"
+      >
+        <div className="mb-4">
+          <label htmlFor="from_name" className="block mb-2 text-white">
+            Name
+          </label>
           <input
             type="text"
             name="from_name"
-            className="mt-1 p-2 w-80 border rounded-md focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-400 text-black"
+            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-black"
             placeholder="Enter your name"
             required
           />
-        </label>
-      </div>
-      <div className="flex justify-center">
-        <label htmlFor="reply_to">
+        </div>
+        <div className="mb-4">
+          <label htmlFor="reply_to" className="block mb-2 text-white">
+            Email
+          </label>
           <input
             type="email"
             name="reply_to"
-            className="mt-1 p-2 w-80 border rounded-md focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-400 text-black"
+            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-black"
             placeholder="Enter your email address"
             required
           />
-        </label>
-      </div>
-      <div className="flex justify-center">
-        <label htmlFor="message">
+        </div>
+        <div className="mb-6">
+          <label htmlFor="message" className="block mb-2 text-white">
+            Message
+          </label>
           <textarea
-            className="hide-scrollbar resize-none mt-1 p-2 w-80 border rounded-md focus:outline-none focus:ring focus:border-blue-300 h-32 placeholder-gray-400 text-black"
             name="message"
-            id="message"
-            cols={30}
-            rows={10}
+            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-black h-32 resize-none"
             placeholder="Enter your message"
             required
           ></textarea>
-        </label>
-      </div>
-      <div className="flex justify-center">
-        <button
-          className="
-            bg-white 
-            text-[#0a192f] 
-            py-2 px-4 rounded-md 
-            hover:bg-gray-200 
-            active:bg-gray-300 
-            focus:bg-gray-300 
-            focus:outline-none 
-            focus:ring 
-            focus:ring-gray-400"
-        >
+        </div>
+        <button className="w-full bg-pink-500 text-white py-3 rounded-md hover:bg-pink-600 transition-all duration-300">
           Submit
         </button>
-      </div>
-    </form>
+      </form>
+    </section>
   );
 }
