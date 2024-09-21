@@ -59,7 +59,7 @@ export default function About() {
         <p className="text-base md:text-lg mt-4 leading-relaxed">
           Fast forward a bit, and here I am, a{" "}
           <span className="text-[#ff64da]">full-stack software engineer</span>{" "}
-          in the making. After years of being the go-to IT guy in the office, I
+          in the making. After years of being the go-to "computer" guy in the office, I
           decided to take the plunge and enroll in a{" "}
           <span className="text-[#ff64da]">
             software engineering bootcamp with General Assembly
