@@ -10,7 +10,7 @@ export default function Contact() {
         "service_ug2hunl",
         "template_bdgqx5r",
         e.currentTarget,
-        process.env.REACT_APP_EMAILJS_USER_ID
+        "gFejuYiGu07KRXjtt" 
       )
       .then(
         (result) => {
@@ -21,6 +21,7 @@ export default function Contact() {
           console.error("Error sending email:", error.text);
         }
       );
+
 
     e.currentTarget.reset();
   };

@@ -23,7 +23,7 @@ export default function App() {
           <section id="projects" className="mb-60 mt-12">
             <Projects />
           </section>
-          <section id="contact" className="">
+          <section id="contact me" className="">
             <Contact />
           </section>
         </div>
