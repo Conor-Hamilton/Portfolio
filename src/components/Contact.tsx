@@ -29,10 +29,10 @@ export default function Contact() {
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex justify-center">
-        <label htmlFor="name">
+        <label htmlFor="from_name">
           <input
             type="text"
-            name="name"
+            name="from_name"
             className="mt-1 p-2 w-80 border rounded-md focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-400 text-black"
             placeholder="Enter your name"
             required
@@ -40,10 +40,10 @@ export default function Contact() {
         </label>
       </div>
       <div className="flex justify-center">
-        <label htmlFor="email">
+        <label htmlFor="reply_to">
           <input
             type="email"
-            name="email"
+            name="reply_to"
             className="mt-1 p-2 w-80 border rounded-md focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-400 text-black"
             placeholder="Enter your email address"
             required
