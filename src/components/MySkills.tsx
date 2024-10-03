@@ -59,15 +59,9 @@ export default function MySkills() {
     { category: "Tools", skills: ["Git", "GitHub", "Insomnia", "TablePlus"] },
   ];
 
-  const learningCurrently = [
-    "React Native",
-    "AWS",
-  ];
+  const learningCurrently = ["Python"];
 
-  const learningNext = [
-    "Next.js",
-    "Angular",
-  ];
+  const learningNext = ["Next.js"];
 
   return (
     <div>
