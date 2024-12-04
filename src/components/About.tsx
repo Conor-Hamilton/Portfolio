@@ -24,7 +24,7 @@ export default function About() {
           Conor Hamilton
         </h1>
         <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
-          Full-Stack Engineer
+          Full-Stack Software Engineer | React | TypeScript | Python
         </h2>
         <div className="opacity-80 justify-center space-x-4 mb-4">
           <a
@@ -49,28 +49,28 @@ export default function About() {
           </a>
         </div>
         <p className="text-base md:text-lg leading-relaxed">
-          Computers have been my jam since I was knee-high to a keyboard. It all
-          started with gaming - name any game. I was hooked. And then, like any
-          curious kid, I started poking around, learning a bit of{" "}
-          <span className="text-[#ff64da]">C++</span> with friends, and even
-          dipping my toes into the world of private servers for said games. Good
-          times...
+          I'm a full-stack software engineer specialising in{" "}
+          <span className="text-[#ff64da]">React, TypeScript, and Python</span>,
+          with additional experience in Node.js, Express, and Flask. My focus is
+          on writing clean, maintainable code and building scalable applications
+          tailored to solve real-world problems.
         </p>
         <p className="text-base md:text-lg mt-4 leading-relaxed">
-          Fast forward a bit, and here I am, a{" "}
-          <span className="text-[#ff64da]">full-stack software engineer</span>{" "}
-          in the making. After years of being the go-to "computer" guy in the office, I
-          decided to take the plunge and enroll in a{" "}
+          My journey into tech began with a passion for gaming, which led me to
+          explore programming as a kid. After years of being the go-to "computer
+          guy" in the office, I took the leap and completed an intensive{" "}
           <span className="text-[#ff64da]">
-            software engineering bootcamp with General Assembly
-          </span>
-          . With a young family to think about, it was time to turn my passion
-          into a career.
+            Software Engineering Immersive course
+          </span>{" "}
+          at General Assembly. With a young family as my motivation, I
+          transformed my passion into a career.
         </p>
         <p className="text-base md:text-lg mt-4 leading-relaxed">
-          When I'm not working on my projects, you can find me spending time
-          with my family, playing video games, watching UFC or watching Arsenal
-          bottle the league (again).
+          Outside of coding, I enjoy spending time with my family, gaming, and
+          watching UFC. I’m currently expanding my skills with{" "}
+          <span className="text-[#ff64da]">Next.js</span> and{" "}
+          <span className="text-[#ff64da]">React Native</span>, while refining
+          my approach to Test-Driven Development (TDD).
         </p>
       </div>
     </section>
