@@ -59,9 +59,9 @@ export default function MySkills() {
     { category: "Tools", skills: ["Git", "GitHub", "Insomnia", "TablePlus"] },
   ];
 
-  const learningCurrently = ["Python"];
+  const learningCurrently = ["Next.js", "Server-side rendering"];
 
-  const learningNext = ["Next.js"];
+  const learningNext = ["TDD, Jest, React Testing Library"];
 
   return (
     <div>
@@ -120,7 +120,7 @@ export default function MySkills() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg md:text-xl mb-2 text-white opacity-70">
-                  Currently Learning
+                  Currently working on:
                 </h3>
                 <ul>
                   {learningCurrently.map((topic, index) => (
@@ -136,7 +136,7 @@ export default function MySkills() {
               </div>
               <div>
                 <h3 className="text-lg md:text-xl mb-2 text-white opacity-70">
-                  Learning Next
+                  What's Next:
                 </h3>
                 <ul>
                   {learningNext.map((topic, index) => (

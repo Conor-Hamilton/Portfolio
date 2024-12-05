@@ -7,6 +7,17 @@ export default function Projects() {
 
   const projects: IProject[] = [
     {
+      title: "Python Discord Bot",
+      description:
+        "A feature-rich Discord bot for managing a community server, with custom commands and event tracking.",
+      technologies: ["Python", "Discord.py", "PostgreSQL", "JSON", "Heroku"],
+      imageUrl:
+        "https://download.logo.wine/logo/Discord_(software)/Discord_(software)-Logo.wine.png",
+      liveUrl: "",
+      githubUrl: "https://github.com/Conor-Hamilton/python-discord-bot",
+      ongoing: true,
+    },
+    {
       title: "11th-Planet-JiuJitsu",
       description: "MMA Gym platform to book and attend classes.",
       technologies: [
@@ -21,6 +32,7 @@ export default function Projects() {
       imageUrl: "https://i.imgur.com/JM3GNui.png",
       liveUrl: "https://11th-planet-jiujitsu.netlify.app/",
       githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-4-frontend",
+      ongoing: false,
     },
     {
       title: "Bootcamp Buddy",
@@ -37,6 +49,7 @@ export default function Projects() {
       imageUrl: "https://i.imgur.com/osCt7GQ.png",
       liveUrl: "https://bootcamp-buddy.netlify.app/",
       githubUrl: "https://github.com/Conor-Hamilton/project-3-frontend",
+      ongoing: false,
     },
     {
       title: "Game of Thrones Character App",
@@ -45,6 +58,7 @@ export default function Projects() {
       imageUrl: "https://i.imgur.com/81oGoUY.png",
       liveUrl: "https://majestic-pegasus-01f742.netlify.app/",
       githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-2",
+      ongoing: false,
     },
     {
       title: "Tetris Reloaded",
@@ -53,6 +67,7 @@ export default function Projects() {
       imageUrl: "https://i.imgur.com/PSprql6.png",
       liveUrl: "https://conor-hamilton.github.io/SEB-Project-1/",
       githubUrl: "https://github.com/Conor-Hamilton/SEB-Project-1",
+      ongoing: false,
     },
   ];
 
@@ -97,28 +112,31 @@ export default function Projects() {
       </h2>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         {projects.map((project, index) => (
-          <a
+          <div
             key={index}
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`bg-[#0a192f] border border-transparent hover:border-white/30 rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl ${
-              isVisible ? "fade-in" : "hidden-content"
-            }`}
-            style={{
-              animationDelay: `${index * 400}ms`,
-              animationFillMode: "both",
-            }}
+            className={`bg-[#0a192f] border border-transparent hover:border-white/30 rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl relative`}
           >
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-              className="w-full h-40 object-cover rounded-lg mb-4"
-            />
-            <h3 className="text-xl text-white font-semibold mb-2">
-              {project.title}
-            </h3>
-            <p className="text-base text-white mb-3">{project.description}</p>
+            {project.ongoing && (
+              <span className="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                Ongoing
+              </span>
+            )}
+            <a
+              href={project.liveUrl || "#"}
+              target={project.liveUrl ? "_blank" : ""}
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full h-40 object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-xl text-white font-semibold mb-2">
+                {project.title}
+              </h3>
+              <p className="text-base text-white mb-3">{project.description}</p>
+            </a>
             <ul className="flex flex-wrap gap-2 mb-3">
               {project.technologies.map((tech, idx) => (
                 <li
@@ -129,18 +147,31 @@ export default function Projects() {
                 </li>
               ))}
             </ul>
-            <div className="flex justify-between space-x-4">
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:underline"
+              >
+                Live Project
+              </a>
+            ) : (
+              <p className="text-sm text-gray-400 italic">
+                No live demo available
+              </p>
+            )}
+            <div className="flex justify-between space-x-4 mt-3">
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:underline"
-                onClick={(e) => e.stopPropagation()}
               >
                 GitHub Repository
               </a>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>

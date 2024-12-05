@@ -5,4 +5,5 @@ export interface IProject {
   imageUrl: string;
   liveUrl: string;
   githubUrl: string;
+  ongoing: boolean;
 }
