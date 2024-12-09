@@ -53,6 +53,11 @@ body {
   display: none; 
 }
 
+.nav a:focus {
+  outline: 2px solid #ff64da; 
+  outline-offset: 4px;
+}
+
 
 @tailwind base;
 @tailwind components;

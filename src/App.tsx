@@ -9,10 +9,15 @@ import Contact from "./components/Contact";
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen w-full text-gray-400 bg-[#0a192f]">
+      <div className="lg:hidden">
+        <Navbar isMobile />
+      </div>
+
       <main className="flex flex-2 my-20 mx-4 md:mx-28">
         <aside className="w-64 min-w-[250px] sticky top-0 lg:block hidden">
           <Navbar />
         </aside>
+
         <div className="flex-1 px-4 sm:px-6 md:px-2 lg:px-2">
           <section id="aboutme" className="mb-60">
             <About />
@@ -28,6 +33,7 @@ export default function App() {
           </section>
         </div>
       </main>
+
       <footer className="w-full bottom-0">
         <Footer />
       </footer>

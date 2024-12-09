@@ -38,13 +38,16 @@ export default function MySkills() {
   const techSkills: IMySkill[] = [
     {
       category: "Programming Languages",
-      skills: ["JavaScript", "TypeScript", "Python"],
+      skills: ["JavaScript", "TypeScript", "Python", "SQL"],
     },
     {
       category: "Frontend",
-      skills: ["React", "Tailwind CSS", "Bulma", "HTML", "CSS"],
+      skills: ["React", "Tailwind CSS", "Bulma"],
     },
-    { category: "Backend", skills: ["Node.js", "Express", "Flask"] },
+    {
+      category: "Backend",
+      skills: ["Node.js", "Express", "Flask", "Django"],
+    },
     {
       category: "Databases",
       skills: [
@@ -55,8 +58,23 @@ export default function MySkills() {
         "Mongo Atlas",
       ],
     },
-    { category: "Deployment", skills: ["Netlify", "Heroku", "Vercel"] },
-    { category: "Tools", skills: ["Git", "GitHub", "Insomnia", "TablePlus"] },
+    {
+      category: "Deployment",
+      skills: ["Netlify", "Heroku", "Vercel", "CI/CD (GitHub Actions)"],
+    },
+    {
+      category: "Tools",
+      skills: ["Git", "GitHub", "Insomnia", "TablePlus"],
+    },
+    {
+      category: "Other",
+      skills: [
+        "REST APIs",
+        "State Management",
+        "Agile Development",
+        "Test-Driven Development (TDD)",
+      ],
+    },
   ];
 
   const learningCurrently = ["Next.js", "Server-side rendering"];
@@ -110,7 +128,7 @@ export default function MySkills() {
       >
         <div className="container px-4 sm:px-6 md:px-8 py-8 mx-auto">
           <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
-            What I'm Learning
+            What are my Interests?
           </h2>
           <div
             className={`bg-opacity-60 rounded-lg p-4 bg-[#112240] shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl ${
