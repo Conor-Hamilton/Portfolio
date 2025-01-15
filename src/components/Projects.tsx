@@ -14,7 +14,7 @@ export default function Projects() {
       imageUrl:
         "https://download.logo.wine/logo/Discord_(software)/Discord_(software)-Logo.wine.png",
       liveUrl: "",
-      githubUrl: "https://github.com/Conor-Hamilton/python-discord-bot",
+      githubUrl: "https://github.com/Conor-Hamilton/Discord_Bot",
       ongoing: true,
     },
     {
