@@ -74,7 +74,8 @@ export default function Projects() {
   useEffect(() => {
     const calculateThreshold = () => {
       const screenWidth = window.innerWidth;
-      return screenWidth < 768 ? 0.25 : 0.6;
+      const referenceWidth = 1200; 
+      return Math.min(0.6, Math.max(0.1, screenWidth / referenceWidth)); 
     };
 
     const observer = new IntersectionObserver(
