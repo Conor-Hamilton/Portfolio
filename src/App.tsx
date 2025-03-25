@@ -12,31 +12,18 @@ export default function App() {
       <div className="lg:hidden">
         <Navbar isMobile />
       </div>
-
-      <main className="flex flex-2 my-20 mx-4 md:mx-28">
-        <aside className="w-64 min-w-[250px] sticky top-0 lg:block hidden">
+      <main className="flex flex-1 my-12 mx-4 sm:mx-8 md:mx-10 lg:mx-12">
+        <aside className="w-56 min-w-[180px] sticky top-0 lg:block hidden">
           <Navbar />
         </aside>
-
-        <div className="flex-1 px-4 sm:px-6 md:px-2 lg:px-2">
-          <section id="aboutme" className="mb-60">
-            <About />
-          </section>
-          <section id="myskills" className="mb-96">
-            <MySkills />
-          </section>
-          <section id="projects" className="mb-60 mt-12">
-            <Projects />
-          </section>
-          <section id="contact me" className="">
-            <Contact />
-          </section>
+        <div className="flex-1 px-4 sm:px-6 md:px-8 lg:px-10">
+          <About />
+          <MySkills />
+          <Projects />
+          <Contact />
         </div>
       </main>
-
-      <footer className="w-full bottom-0">
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }

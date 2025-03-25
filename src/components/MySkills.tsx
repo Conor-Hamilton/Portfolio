@@ -1,40 +1,7 @@
-import React, { useState, useEffect, useRef, RefObject } from "react";
+import React from "react";
 import { IMySkill } from "../interfaces/Skills";
 
 export default function MySkills() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const sectionRef: RefObject<HTMLElement> = useRef(null);
-
-  useEffect(() => {
-    const calculateThreshold = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth < 768) {
-        return 0.25;
-      } else {
-        return 0.5;
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: calculateThreshold() }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, []);
-
   const techSkills: IMySkill[] = [
     {
       category: "Programming Languages",
@@ -42,12 +9,9 @@ export default function MySkills() {
     },
     {
       category: "Frontend",
-      skills: ["React", "Tailwind CSS", "Bulma"],
+      skills: ["React", "Next.js", "Tailwind CSS", "Bulma"],
     },
-    {
-      category: "Backend",
-      skills: ["Node.js", "Express", "Flask", "Django"],
-    },
+    { category: "Backend", skills: ["Node.js", "Express", "Flask", "Django"] },
     {
       category: "Databases",
       skills: [
@@ -64,7 +28,7 @@ export default function MySkills() {
     },
     {
       category: "Tools",
-      skills: ["Git", "GitHub", "Insomnia", "TablePlus"],
+      skills: ["Git", "GitHub", "Insomnia", "TablePlus", "Jira"],
     },
     {
       category: "Other",
@@ -78,100 +42,67 @@ export default function MySkills() {
   ];
 
   const learningCurrently = ["Next.js", "Server-side rendering"];
-
   const learningNext = ["TDD, Jest, React Testing Library"];
 
   return (
-    <div>
-      <section
-        ref={sectionRef}
-        className={`h-full max-w-[850px] mx-auto bg-[#0a192f] px-2 ${
-          isVisible ? "fade-in" : "hidden-content"
-        }`}
-      >
-        <div className="container px-4 sm:px-6 md:px-8 py-8 mx-auto">
-          <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
-            My Skills
-          </h2>
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3">
-            {techSkills.map((category, index) => (
-              <div
-                key={index}
-                className={`bg-opacity-60 rounded-lg p-4 bg-[#112240] shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl ${
-                  isVisible ? "visible fade-in" : "hidden-content"
-                }`}
-                style={{ animationDelay: `${index * 400}ms` }}
-              >
-                <h3 className="text-lg md:text-sm lg:text-xs font-semibold mb-3">
-                  {category.category}
-                </h3>
-                <ul>
-                  {category.skills.map((skill) => (
-                    <li
-                      key={skill}
-                      className="bg-pink-900 bg-opacity-50 text-[#ff64da] text-sm md:text-xs font-medium my-1 px-2.5 py-0.5 rounded-full inline-block"
-                    >
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        className={`h-full max-w-[850px] mx-auto bg-[#0a192f] px-2 mt-8 ${
-          isVisible ? "fade-in" : "hidden-content"
-        }`}
-      >
-        <div className="container px-4 sm:px-6 md:px-8 py-8 mx-auto">
-          <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
-            What are my Interests?
-          </h2>
+    <section className="max-w-5xl mx-auto my-12 px-4 sm:px-6 md:px-8">
+      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
+        My Skills & Interests
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+        {techSkills.map((category, index) => (
           <div
-            className={`bg-opacity-60 rounded-lg p-4 bg-[#112240] shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl ${
-              isVisible ? "visible fade-in" : "hidden-content"
-            }`}
+            key={index}
+            className="bg-[#112240] rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-102 transition-all duration-300 ease-in-out"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg md:text-xl mb-2 text-white opacity-70">
-                  Currently working on:
-                </h3>
-                <ul>
-                  {learningCurrently.map((topic, index) => (
-                    <li
-                      key={index}
-                      className="bg-pink-900 bg-opacity-50 text-[#ff64da] text-sm md:text-xs font-medium my-1 px-2.5 py-0.5 rounded-full inline-block"
-                      style={{ animationDelay: `${index * 400}ms` }}
-                    >
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg md:text-xl mb-2 text-white opacity-70">
-                  What's Next:
-                </h3>
-                <ul>
-                  {learningNext.map((topic, index) => (
-                    <li
-                      key={index}
-                      className="bg-pink-900 bg-opacity-50 text-[#ff64da] text-sm md:text-xs font-medium my-1 px-2.5 py-0.5 rounded-full inline-block"
-                      style={{ animationDelay: `${index * 400}ms` }}
-                    >
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <h3 className="text-xl font-medium text-white mb-3">
+              {category.category}
+            </h3>
+            <ul className="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <li
+                  key={skill}
+                  className="bg-pink-900 bg-opacity-50 text-[#ff64da] text-xs font-medium px-2 py-1 rounded"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div className="bg-[#112240] rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-102 transition-all duration-300 ease-in-out">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="text-xl font-medium text-white mb-2">
+              Currently Working On
+            </h3>
+            <ul className="flex flex-wrap gap-2">
+              {learningCurrently.map((topic, index) => (
+                <li
+                  key={index}
+                  className="bg-pink-900 bg-opacity-50 text-[#ff64da] text-xs font-medium px-2 py-1 rounded"
+                >
+                  {topic}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-medium text-white mb-2">What’s Next</h3>
+            <ul className="flex flex-wrap gap-2">
+              {learningNext.map((topic, index) => (
+                <li
+                  key={index}
+                  className="bg-pink-900 bg-opacity-50 text-[#ff64da] text-xs font-medium px-2 py-1 rounded"
+                >
+                  {topic}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

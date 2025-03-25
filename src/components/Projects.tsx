@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useRef, RefObject } from "react";
+import React from "react";
 import { IProject } from "../interfaces/Projects";
 
 export default function Projects() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef: RefObject<HTMLElement> = useRef(null);
-
   const projects: IProject[] = [
     {
       title: "Python Discord Bot",
@@ -71,103 +68,65 @@ export default function Projects() {
     },
   ];
 
-  useEffect(() => {
-    const calculateThreshold = () => {
-      const screenWidth = window.innerWidth;
-      const referenceWidth = 1200; 
-      return Math.min(0.6, Math.max(0.1, screenWidth / referenceWidth)); 
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: calculateThreshold() }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className={`max-w-4xl mx-auto my-20 px-4 md:px-24 ${
-        isVisible ? "visible fade-in" : "hidden-content"
-      }`}
-    >
-      <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
+    <section className="max-w-5xl mx-auto my-12 px-4 sm:px-6 md:px-8">
+      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
         My Projects
       </h2>
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`bg-[#0a192f] border border-transparent hover:border-white/30 rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl relative`}
+            className="bg-[#112240] rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-102 transition-all duration-300 ease-in-out"
           >
-            {project.ongoing && (
-              <span className="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                Ongoing
-              </span>
-            )}
-            <a
-              href={project.liveUrl || "#"}
-              target={project.liveUrl ? "_blank" : ""}
-              rel="noopener noreferrer"
-              className="block"
-            >
+            <div className="relative">
+              {project.ongoing && (
+                <span className="absolute top-0 right-0 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  Ongoing
+                </span>
+              )}
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-40 object-cover rounded-lg mb-4"
+                className="w-full h-48 object-cover rounded-md mb-4"
               />
-              <h3 className="text-xl text-white font-semibold mb-2">
-                {project.title}
-              </h3>
-              <p className="text-base text-white mb-3">{project.description}</p>
-            </a>
-            <ul className="flex flex-wrap gap-2 mb-3">
+            </div>
+            <h3 className="text-xl font-medium text-white mb-2">
+              {project.title}
+            </h3>
+            <p className="text-gray-300 text-base mb-4">
+              {project.description}
+            </p>
+            <ul className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, idx) => (
                 <li
                   key={idx}
-                  className="bg-pink-900 bg-opacity-50 text-[#ff64da] text-xs font-medium my-1 px-2.5 py-0.5 rounded-full"
+                  className="bg-pink-900 bg-opacity-50 text-[#ff64da] text-xs font-medium px-2 py-1 rounded"
                 >
                   {tech}
                 </li>
               ))}
             </ul>
-            {project.liveUrl ? (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:underline"
-              >
-                Live Project
-              </a>
-            ) : (
-              <p className="text-sm text-gray-400 italic">
-                No live demo available
-              </p>
-            )}
-            <div className="flex justify-between space-x-4 mt-3">
+            <div className="flex flex-col gap-2">
+              {project.liveUrl ? (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 text-sm"
+                >
+                  Live Project
+                </a>
+              ) : (
+                <p className="text-gray-500 text-sm italic">
+                  No live demo available
+                </p>
+              )}
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:underline"
+                className="text-blue-400 hover:text-blue-300 text-sm"
               >
                 GitHub Repository
               </a>

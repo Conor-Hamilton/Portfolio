@@ -1,5 +1,7 @@
 body {
   font-family: "Inter", sans-serif;
+  background-color: #0a192f;
+  color: #d1d5db;
 }
 
 @keyframes fadeInUp {

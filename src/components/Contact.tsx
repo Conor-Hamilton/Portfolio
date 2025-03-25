@@ -50,13 +50,13 @@ export default function Contact() {
   };
 
   return (
-    <section className="max-w-4xl mx-auto mb-28 px-4 md:px-24">
-      <h2 className="text-2xl mb-6 text-center text-white opacity-90">
+    <section className="max-w-5xl mx-auto my-12 px-4 sm:px-6 md:px-8">
+      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6 text-center">
         Contact Me
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="bg-[#112240] shadow-lg p-6 rounded-lg max-w-lg mx-auto"
+        className="bg-[#112240] shadow-md p-6 rounded-lg max-w-lg mx-auto"
       >
         {message && (
           <p
@@ -71,36 +71,36 @@ export default function Contact() {
           </p>
         )}
         <div className="mb-4">
-          <label htmlFor="from_name" className="block mb-2 text-white">
+          <label htmlFor="from_name" className="block mb-2 text-gray-300">
             Name
           </label>
           <input
             type="text"
             name="from_name"
-            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 text-black"
             placeholder="Enter your name"
             required
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="reply_to" className="block mb-2 text-white">
+          <label htmlFor="reply_to" className="block mb-2 text-gray-300">
             Email
           </label>
           <input
             type="email"
             name="reply_to"
-            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 text-black"
             placeholder="Enter your email address"
             required
           />
         </div>
         <div className="mb-6">
-          <label htmlFor="message" className="block mb-2 text-white">
+          <label htmlFor="message" className="block mb-2 text-gray-300">
             Message
           </label>
           <textarea
             name="message"
-            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black h-32 resize-none"
+            className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 text-black h-32 resize-none"
             placeholder="Enter your message"
             required
           ></textarea>

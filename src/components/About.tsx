@@ -1,33 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function About() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 800);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section
       id="aboutme"
-      className={`container mx-auto mb-28 px-4 md:px-24 ${
-        isVisible ? "fade-in-up" : "hidden-content"
-      }`}
-      style={{ scrollMarginTop: "80px" }} 
+      className="max-w-5xl mx-auto my-16 px-4 sm:px-6 md:px-8"
     >
-      <div className="max-w-4xl mx-auto p-4 md:p-8">
-        <h1 className="text-3xl md:text-5xl font-bold mb-2 text-white opacity-70">
+      <div className="bg-[#112240] rounded-lg p-6 shadow-md">
+        <h1 className="text-2xl text-center md:text-3xl font-semibold text-white mb-2">
           Conor Hamilton
         </h1>
-        <h2 className="text-xl md:text-2xl mb-4 text-white opacity-80">
-          Full-Stack Software Engineer | React | TypeScript | Python
+        <h2 className="text-xl text-center font-medium text-gray-300 mb-4">
+          Full-Stack Software Engineer | Instructor Associate | React |
+          TypeScript | Python
         </h2>
-        <div className="opacity-80 justify-center space-x-4 mb-4">
+        <div className="flex justify-center space-x-4 mb-4">
           <a
             href="https://github.com/Conor-Hamilton"
             target="_blank"
@@ -35,7 +24,7 @@ export default function About() {
           >
             <FontAwesomeIcon
               icon={faGithub}
-              className="text-3xl text-white hover:text-gray-300"
+              className="text-3xl text-white hover:text-blue-300"
             />
           </a>
           <a
@@ -45,30 +34,37 @@ export default function About() {
           >
             <FontAwesomeIcon
               icon={faLinkedin}
-              className="text-3xl text-white hover:text-gray-300"
+              className="text-3xl text-white hover:text-blue-300"
             />
           </a>
         </div>
-        <p className="text-base md:text-lg leading-relaxed">
-          I'm a full-stack software engineer specialising in{" "}
+        <p className="text-base text-gray-300 mb-4">
+          I’m a full-stack software engineer specialising in{" "}
           <span className="text-[#ff64da]">React, TypeScript, and Python</span>,
-          with additional experience in Node.js, Express, and Flask. My focus is
-          on writing clean, maintainable code and building scalable applications
-          tailored to solve real-world problems.
+          with experience in Node.js, Express, and Flask. I currently work as an{" "}
+          <span className="text-[#ff64da]">
+            Instructor Associate at General Assembly
+          </span>
+          , where I support aspiring developers on their coding journeys, and
+          volunteer as a{" "}
+          <span className="text-[#ff64da]">
+            Software Engineer with Youth4Youth
+          </span>
+          , creating solutions to empower young people. My focus is on writing
+          clean, maintainable code and developing tailored scalable solutions.
         </p>
-        <p className="text-base md:text-lg mt-4 leading-relaxed">
-          My journey into tech began with a passion for gaming, which led me to
-          explore programming as a kid. After years of being the go-to "computer
-          guy" in the office, I took the leap and completed an intensive{" "}
+        <p className="text-base text-gray-300 mb-4">
+          My tech journey began with a passion for gaming, which sparked my
+          interest in programming as a child. After years as the office
+          "computer guy," I completed General Assembly’s intensive{" "}
           <span className="text-[#ff64da]">
             Software Engineering Immersive course
-          </span>{" "}
-          at General Assembly. With a young family as my motivation, I
-          transformed my passion into a career.
+          </span>
+          , turning my passion into a career, motivated by my young family.
         </p>
-        <p className="text-base md:text-lg mt-4 leading-relaxed">
-          Outside of coding, I enjoy spending time with my family, gaming, and
-          watching UFC. I’m currently expanding my skills with{" "}
+        <p className="text-base text-gray-300">
+          Outside of coding, I enjoy family time, gaming, and watching UFC. I’m
+          currently enhancing my skills in{" "}
           <span className="text-[#ff64da]">Next.js</span> and{" "}
           <span className="text-[#ff64da]">React Native</span>, while refining
           my approach to Test-Driven Development (TDD).
